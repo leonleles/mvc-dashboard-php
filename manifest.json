@@ -1,0 +1,12 @@
+{
+  "name": "",
+  "version": "",
+  "ajax": {
+    "ajax": "ajax/ajaxExemploController"
+  },
+  "app": {
+    "home": "controllers/homeController",
+    "exemplo": "controllers/Exemplo",
+    "teste": "controllers/teste"
+  }
+}
