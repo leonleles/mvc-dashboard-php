@@ -1,6 +1,18 @@
-require(['jquery', 'ajax'], function ($, ajax) {
+require([
+    'jquery',
+    'ajax',
+
+    'chart-area',
+    'chart-pie'
+], function ($, ajax) {
     'use strict';
 
-    alert(123);
+    var a = new ajax();
+
+    a.set("ajax","teste", {nome: 'leonardo'},function (res) {
+        console.log(res);
+    });
+
+    a.execute();
 
 });

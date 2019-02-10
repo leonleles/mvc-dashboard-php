@@ -386,7 +386,7 @@
 
 <!-- Carregar js assets-->
 <?php foreach ($this->js as $js): ?>
-    <script type="text/javascript" src="<?= $js ?>"></script>
+    <script type="text/javascript" src="<?= BASE_URL ?><?= $js ?>"></script>
 <?php endforeach; ?>
 </body>
 
