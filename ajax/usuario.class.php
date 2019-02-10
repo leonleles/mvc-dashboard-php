@@ -1,6 +1,6 @@
 <?php
 
-class ajaxExemploController extends Ajax {
+class usuario extends Ajax {
 
     public function _construct () {
 

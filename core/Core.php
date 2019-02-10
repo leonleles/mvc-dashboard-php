@@ -32,7 +32,8 @@ class Core {
 
         if (!empty($url) && $url != '/') {
             $explode = explode("/", $url);
-            if (count($explode) >= 2 && isset($explode[2]) && strlen($explode[2]) > 0) {
+
+            if (count($explode) == 3 && isset($explode[2]) && strlen($explode[2]) > 0) {
                 $url = explode('/', $url);
                 array_shift($url);
 
@@ -52,7 +53,7 @@ class Core {
                 if ($url > 0) {
                     $params = $url;
                 }
-            } else {
+            }else {
                 if (isset($explode[2]) && $explode[2] != "") {
                     $currentController = self::CLASS_ERROR;
                     $currentAction = self::CURRENT_ACTION;

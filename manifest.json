@@ -2,7 +2,7 @@
   "name": "",
   "version": "",
   "ajax": {
-    "ajax": "ajax/ajaxExemploController"
+    "ajax": "ajax/usuario"
   },
   "app": {
     "home": "controllers/homeController",

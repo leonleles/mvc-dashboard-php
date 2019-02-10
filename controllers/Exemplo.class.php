@@ -7,7 +7,7 @@ class Exemplo extends Controller {
     public function _construct() {
 
         $this->setCss('assets/css/exemplo.css');
-        $this->setJs('assets/js/clienteedit.js');
+//        $this->setJs('assets/js/clienteedit.js');
 
         //Nome da view
         $this->loadTemplate(self::VIEW);
