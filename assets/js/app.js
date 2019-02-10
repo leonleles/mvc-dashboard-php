@@ -1,7 +1,11 @@
 window.name = "NG_DEFER_BOOTSTRAP!";
 
+//Monta a url
+var url_atual = window.location.href.split("/");
+window.url = "http://" + url_atual[2] + '/' + url_atual[3] + "/";
+
 require.config({
-    baseUrl: "assets/js/",
+    baseUrl: window.url + "assets/js/",
     paths: {
         'jquery': 'libs/jquery/jquery',
         'bundle': 'libs/bootstrap/bootstrap.bundle',
@@ -13,6 +17,9 @@ require.config({
         'ajax': 'componentes/Ajax'
     },
     shim: {
+        'jquery-easing': {
+            deps: 'jquery'
+        },
         'chart-area': {
             deps: ['chart']
         },

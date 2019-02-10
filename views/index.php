@@ -11,11 +11,11 @@
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="assets/fonts/fontawesome/all.css" rel="stylesheet" type="text/css">
+    <link href="<?= BASE_URL ?>assets/fonts/fontawesome/all.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>assets/css/index.css" rel="stylesheet">
     <!-- Carregar css assets-->
 
     <?php foreach ($this->css as $css): ?>
@@ -380,9 +380,9 @@
     </div>
 </div>
 
-<script type="text/javascript" src="assets/js/libs/require/require.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/app/index.js"></script>
+<script type="text/javascript" src="<?= BASE_URL ?>assets/js/libs/require/require.js"></script>
+<script type="text/javascript" src="<?= BASE_URL ?>assets/js/app.js"></script>
+<script type="text/javascript" src="<?= BASE_URL ?>assets/js/app/index.js"></script>
 
 <!-- Carregar js assets-->
 <?php foreach ($this->js as $js): ?>

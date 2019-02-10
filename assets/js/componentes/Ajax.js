@@ -33,7 +33,7 @@ define('ajax', function () {
             if (this.data.length > 0) {
                 $.each(this.data, function (i, v) {
                     $.ajax({
-                        url: "ajax/" + v.controller,
+                        url: window.url + "ajax/" + v.controller,
                         type: "POST",
                         data: {
                             acao: v.acao,

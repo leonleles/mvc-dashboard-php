@@ -32,7 +32,7 @@ class Core {
 
         if (!empty($url) && $url != '/') {
             $explode = explode("/", $url);
-            if (count($explode) == 3 && isset($explode[2]) && strlen($explode[2]) > 0) {
+            if (count($explode) >= 2 && isset($explode[2]) && strlen($explode[2]) > 0) {
                 $url = explode('/', $url);
                 array_shift($url);
 
