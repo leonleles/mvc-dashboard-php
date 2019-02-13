@@ -16,6 +16,7 @@ class Core {
     const CLASS_HOME = 'homeController';
 
     public function run() {
+        $module = null;
 
         $url = '/';
         if (isset($_GET['url'])) {
@@ -36,6 +37,7 @@ class Core {
             if (count($explode) == 3 && isset($explode[2]) && strlen($explode[2]) > 0) {
                 $url = explode('/', $url);
                 array_shift($url);
+                $module = $url[0];
 
                 $m = new Manifest(["module" => $url[0], "class" => $url[1]]);
 
