@@ -1,6 +1,7 @@
 <?php
 
-class Core {
+class Core
+{
 
     /**
      * Classe de erro.
@@ -15,7 +16,8 @@ class Core {
      */
     const CLASS_HOME = 'homeController';
 
-    public function run() {
+    public function run()
+    {
         $module = null;
 
         $url = '/';
@@ -28,7 +30,7 @@ class Core {
         $params = array();
 
         $currentController = self::CLASS_HOME;
-        $file = "controllers/".self::CLASS_HOME;
+        $file = "controllers/" . self::CLASS_HOME;
         $currentAction = self::CURRENT_ACTION;
 
         if (!empty($url) && $url != '/') {
@@ -55,7 +57,7 @@ class Core {
                 if ($url > 0) {
                     $params = $url;
                 }
-            }else {
+            } else {
                 if (isset($explode[2]) && $explode[2] != "") {
                     $currentController = self::CLASS_ERROR;
                     $currentAction = self::CURRENT_ACTION;
@@ -63,14 +65,17 @@ class Core {
             }
         }
 
-        if(
-            ($module != null && $module == 'ajax') &&
-            isset($_POST['action_ajax_post']) &&
-            method_exists($currentController, $_POST['action_ajax_post'])
-        ){
-            $currentAction = $_POST['action_ajax_post'];
-            unset($_POST['action_ajax_post']);
-            $params = $_POST;
+        if ($module != null && $module == 'ajax') {
+            if (
+                isset($_POST['action_ajax_post']) &&
+                method_exists($currentController, $_POST['action_ajax_post'])
+            ) {
+                $currentAction = $_POST['action_ajax_post'];
+                unset($_POST['action_ajax_post']);
+                $params = $_POST;
+            }else{
+                exit("Método do Ajax não encontrado.");
+            }
         }
 
         if (!file_exists($file . '.class.php') || !method_exists($currentController, $currentAction)) {
@@ -82,12 +87,13 @@ class Core {
 
         $result = call_user_func_array(array($c, $currentAction), $params);
 
-        if($module == 'ajax'){
+        if ($module == 'ajax') {
             echo json_encode($result);
         }
     }
 
-    public function checkRoutes($url) {
+    public function checkRoutes($url)
+    {
         global $routes;
 
         foreach ($routes as $pt => $newurl) {
