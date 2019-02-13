@@ -2,13 +2,7 @@
 
 class usuario extends Ajax {
 
-    public function _construct () {
-
-        switch ($this->getAction()) {
-            case 'teste':
-                echo $this->setData($this->getData());
-                break;
-        }
-
+    public function teste () {
+        return ($this->getData());
     }
 }

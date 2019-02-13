@@ -63,14 +63,28 @@ class Core {
             }
         }
 
+        if(
+            ($module != null && $module == 'ajax') &&
+            isset($_POST['action_ajax_post']) &&
+            method_exists($currentController, $_POST['action_ajax_post'])
+        ){
+            $currentAction = $_POST['action_ajax_post'];
+            unset($_POST['action_ajax_post']);
+            $params = $_POST;
+        }
+
         if (!file_exists($file . '.class.php') || !method_exists($currentController, $currentAction)) {
             $currentController = self::CLASS_ERROR;
             $currentAction = self::CURRENT_ACTION;
         }
 
-        $c = new $currentController();
+        $c = new  $currentController();
 
-        call_user_func_array(array($c, $currentAction), $params);
+        $result = call_user_func_array(array($c, $currentAction), $params);
+
+        if($module == 'ajax'){
+            echo json_encode($result);
+        }
     }
 
     public function checkRoutes($url) {

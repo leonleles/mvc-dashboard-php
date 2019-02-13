@@ -19,7 +19,7 @@ define('ajax', function () {
         this.set = function (controller, acao, dados, call) {
             this.data.push({
                 controller: controller,
-                acao: acao,
+                action_ajax_post: acao,
                 dados: dados,
                 call: call
             })
@@ -36,7 +36,7 @@ define('ajax', function () {
                         url: window.url + "ajax/" + v.controller,
                         type: "POST",
                         data: {
-                            acao: v.acao,
+                            action_ajax_post: v.action_ajax_post,
                             dados: v.dados
                         },
                         dataType: "json",

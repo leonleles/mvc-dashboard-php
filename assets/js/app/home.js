@@ -7,12 +7,16 @@ require([
 ], function ($, ajax) {
     'use strict';
 
-    var a = new ajax();
+    $(document).click(function () {
 
-    a.set("ajax","teste", {nome: 'leonardo'},function (res) {
-        console.log(res);
+        var a = new ajax();
+
+        a.set("usuario","teste", {nome: 'leonardo'},function (res) {
+            console.log(res);
+        });
+
+        a.execute();
+
     });
-
-    a.execute();
 
 });
