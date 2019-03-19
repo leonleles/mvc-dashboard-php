@@ -6,6 +6,9 @@
   },
   "app": {
     "home": "controllers/homeController",
+    "servico": "controllers/servicoController",
+
+
     "exemplo": "controllers/Exemplo",
     "teste": "controllers/teste"
   }
